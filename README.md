@@ -8,7 +8,11 @@ made the project start working:
 https://stackoverflow.com/questions/14403669/why-can-maven-not-find-my-custom-mojo
 
 Apparently, this is an issue with Maven since 2013, and with every release Maven'd say it was fixed, 
-when in reality it wasn't.
+when in reality it wasn't. Unfortunately, this didn't work either and Maven couldn't find my Mojo.
+
+Then I followed the example closely from this repository, and copied most of pom.xml settings from it to find where was the issue.
+
+https://github.com/oktadev/example-maven-plugin
 
 Eventually, I found the real issue was that my project folder structure did not have "/src/java/main" and my packages
 were floating in the root of the directory, which Maven did not take kindly.
